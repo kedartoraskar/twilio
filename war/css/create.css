@@ -1,0 +1,76 @@
+body {
+	font-family: 'Open-Sans', sans-serif;
+}
+
+.form-container {	
+	position: relative;
+	margin: 5% 10%;
+}
+
+.form-container h1 {
+	font-size: 2.2em;
+	font-weight: 200;
+	text-align: center;
+	padding: 25px 0;
+	background: #3CD;
+	color: #fff;
+	border-radius: 50px;
+	margin: 15px 180px;
+	
+}
+
+input, textarea, select, label {
+	font-size: 15px;
+	border-radius: 5px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 200px;
+	font-size: 1.1em;
+	font-weight: 100;
+}
+
+#create label {
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+#create input {
+	-webkit-appearance: none;
+	padding: 15px;
+	border: 1px #eee solid;
+	background: #eee;
+}
+
+#create textarea {
+	border: 1px #eee solid;
+	background: #eee;
+	padding: 15px;
+}
+
+.form-field {
+	margin: 10px 0;
+}
+
+#create fieldset input[type="submit"] {
+	background-color: #33cc77;
+	color: #fff;
+	display: block;
+	margin: 0 auto;
+	padding: 4px 0;
+	width: 15px;
+}
+
+#create fieldset input[type="submit"]:hover {
+	background-color: #28ad63;
+}
+
+
+
+.main-container {
+	
+}
+
+.form-container {
+	
+}

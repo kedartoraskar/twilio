@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Create a sale reminder</title>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/create.css">
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery.timepicker.css">
+        <link rel="stylesheet" type="text/css" href="css/lib/base.css">
+        
+        <!-- For HTML5 -->
+        
+        		<style>
+		
+		*:focus{
+			outline:none; /* Prevents blue border in Webkit */
+		}
+
+		body {
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /*  */
+		}
+		
+		#top_bit {
+			width:760px;
+			margin: 0 auto;
+		}
+		
+		form {
+			width:300px;
+			margin: 20px auto;
+		}
+
+		p {
+			line-height: 1.6;
+		}
+
+		input, textarea {
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			background-color:#fff;
+			border:1px solid #ccc;
+			font-size:20px;
+			width:300px;
+			min-height:30px;
+			display:block;
+			margin-bottom:16px;
+			margin-top:8px;
+			
+			-webkit-border-radius:5px;
+			-moz-border-radius:5px;
+			border-radius:5px;
+			
+			-webkit-transition: all 0.5s ease-in-out;
+			-moz-transition: all 0.5s ease-in-out;
+			transition: all 0.5s ease-in-out;
+		}
+		
+		textarea {
+				min-height:200px;
+		}
+
+		input:focus, textarea:focus {
+			-webkit-box-shadow:0 0 25px #ccc;
+			-moz-box-shadow:0 0 25px #ccc;
+			box-shadow:0 0 25px #ccc;
+			
+			-webkit-transform: scale(1.05);
+			-moz-transform: scale(1.05);
+			transform: scale(1.05);
+		}
+		
+		/* The interesting bit */
+		
+		input:not(:focus), textarea:not(:focus) {
+			opacity:0.5;
+		}
+		
+		input:required, textarea:required {
+			background:url("/images/asterisk_orange.png") no-repeat 280px 7px;						
+		}
+
+		input:valid, textarea:valid {
+			background:url("/images/tick.png") no-repeat 280px 5px;			
+		}		
+
+		input:focus:invalid, textarea:focus:invalid {
+			background:url("/images/cancel.png") no-repeat 280px 7px;						
+		}
+
+		input[type=submit] {
+			padding:10px;
+			background:none;
+			opacity:1.0;
+		}
+		
+		</style>
+        
+        
+        
+	</head>
+	
+	<body>
+		<div class="main-container">
+			<div class="form-container">
+				<h1>Create a Sale Reminder</h1>
+				<form id="createsalereminder" method="POST">
+					<fieldset>
+						<div class="form-field">
+							<label for="m-name" font-weight="bold" color="black">Reminder for</label>
+							<input type="text" name="m-name" id="m-name" required placeholder="Name"/>
+						</div>
+						
+						<!--  <div class="form-field">
+							<label for="m-desc">Description</label>
+							<textarea name="m-desc" id="m-desc"></textarea>
+						</div> -->
+						
+						<div class="form-field">
+							 <label for="m-date">Date</label>
+							<!-- <textarea name="m-contenturl" id="m-contenturl"></textarea>-->
+							<input name="m-date" type="date" id="m-date" />
+						</div>		
+						
+						<div class="form-field">
+							 <label for="m-time">Time</label>
+							<!-- <textarea name="m-contenturl" id="m-contenturl"></textarea>-->
+							<!--<input name="m-time" type="text" id="m-time" />-->
+							<input type="time" name="m-time" id="m-time" />
+						</div>								
+						
+						<div class="form-field">
+							<label for="m-phonenumber">Phone Number</label>
+							<input type="text" name="m-phonenumber" id="m-phonenumber" />
+						</div>
+
+						<input id="submit-salereminder" type="Submit" value="Create Sale Reminder">						
+					</fieldset>
+				</form>
+			</div>
+		</div>
+		<a href="saleisonreminderinfo.html">App Info</a>
+		
+		<!-- Scripts -->
+		<script type="text/javascript" src="js/jquery-1.10.0.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
+		<script type="text/javascript" src="js/jquery.timepicker.js"></script>
+		<script type="text/javascript" src="css/lib/base.js"></script>
+		<!-- <script type="text/javascript" src="js/jquery.timepicker.min.js"</script>-->
+		<!--<script>
+			$(function(){
+			  $.datepicker.setDefaults(
+			    $.extend($.datepicker.regional[""])
+			  );
+			  $("#m-date").datepicker();
+			});
+  		</script> -->
+  		<!--  <script>
+  			$("#m-time").timepicker();
+  		</script> -->
+		<script type="text/javascript" src="js/createsalereminder.js"></script>
+	</body>
+</html>
