@@ -1,5 +1,7 @@
 package com.twilio.report.Reports;
 
+import java.util.HashMap;
+
 import com.twilio.report.RestClient.TwilioRestClientFactory;
 import com.twilio.report.Util.ReportException;
 import com.twilio.report.Util.Constants;
@@ -37,17 +39,17 @@ public class TwilioCountryWiseReport {
 	public static String PRICING_FILE_PATH;
 	public static String REPORT_LOCATION_PATH;
 
-	/**
-	 * Main method
-	 * 
-	 * @param args
-	 * @throws TwilioRestException
-	 * @throws ReportException
-	 */
-	public static void main(String[] args) throws TwilioRestException,
-			ReportException {
-		initializeArguments();
-	}
+//	/**
+//	 * Main method
+//	 * 
+//	 * @param args
+//	 * @throws TwilioRestException
+//	 * @throws ReportException
+//	 */
+//	public static void main(String[] args) throws TwilioRestException,
+//			ReportException {
+//		initializeArguments();
+//	}
 
 	/**
 	 * 
@@ -56,18 +58,16 @@ public class TwilioCountryWiseReport {
 	 * 
 	 * @param argumentList
 	 */
-	public static void initializeArguments() {
+	public static void initializeArguments(HashMap<String,String> argumentMap) {
 
-		TWILIO_REPORT_TYPE = System.getenv("TWILIO_REPORT_TYPE");
-		;
-		TWILIO_SE_ACCOUNT_SID = System.getenv("TWILIO_SE_ACCOUNT_SID");
-		TWILIO_SE_AUTH_TOKEN = System.getenv("TWILIO_SE_AUTH_TOKEN");
-		TWILIO_CUSTOMER_ACCOUNT_SID = System
-				.getenv("TWILIO_CUSTOMER_ACCOUNT_SID");
-		PRICING_FILE_PATH = System.getenv("PRICING_FILE_PATH");
-		REPORT_LOCATION_PATH = System.getenv("REPORT_LOCATION_PATH");
-		TWILIO_REPORT_START_DATE = System.getenv("TWILIO_REPORT_START_DATE");
-		TWILIO_REPORT_END_DATE = System.getenv("TWILIO_REPORT_END_DATE");
+		TWILIO_REPORT_TYPE = argumentMap.get("TWILIO_REPORT_TYPE");
+		TWILIO_SE_ACCOUNT_SID = argumentMap.get("TWILIO_ACCOUNT_SID");
+		TWILIO_SE_AUTH_TOKEN = argumentMap.get("TWILIO_AUTH_TOKEN");
+		TWILIO_CUSTOMER_ACCOUNT_SID = argumentMap.get("TWILIO_CUSTOMER_ACCOUNT_SID");
+		PRICING_FILE_PATH = argumentMap.get("PRICING_FILE_PATH");
+		REPORT_LOCATION_PATH = argumentMap.get("REPORT_LOCATION_PATH");
+		TWILIO_REPORT_START_DATE = argumentMap.get("TWILIO_REPORT_START_DATE");
+		TWILIO_REPORT_END_DATE = argumentMap.get("TWILIO_REPORT_END_DATE");
 
 		System.out.println("Generating report for Customer SID: "
 				+ TWILIO_CUSTOMER_ACCOUNT_SID);

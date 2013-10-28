@@ -1,7 +1,6 @@
 package com.twilio.report.RestClient;
 
 import com.twilio.sdk.TwilioRestClient;
-import com.twilio.sdk.resource.Resource;
 
 public class TwilioRestClientFactory {
 

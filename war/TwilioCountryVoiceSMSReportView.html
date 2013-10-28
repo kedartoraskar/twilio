@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Create a sale reminder</title>
+		<title>Twilio Report</title>
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" type="text/css" href="css/create.css">
@@ -102,13 +102,36 @@
 	<body>
 		<div class="main-container">
 			<div class="form-container">
-				<h1>Create a Sale Reminder</h1>
-				<form id="createsalereminder" method="POST">
+				<h1>Run a country wise usage report</h1>
+				<form id="twiliocountryvoicesmsreport" method="POST" action="/twiliocountryvoicesmsreport">
 					<fieldset>
 						<div class="form-field">
-							<label for="m-name" font-weight="bold" color="black">Reminder for</label>
-							<input type="text" name="m-name" id="m-name" required placeholder="Name"/>
+							<label for="m-name" font-weight="bold" color="black">Report Type</label>
+							<input type="text" name="m-title" id="m-title" required placeholder="Title"/>
 						</div>
+						
+<!-- 						<div class="form-field"> -->
+<!-- 							<label for="m-name" font-weight="bold" color="black">Report Type</label> -->
+<!-- 							<select id="m-title"> -->
+<!--         						<option value="0">Voice</option> -->
+<!--         						<option value="1">Messaging</option> -->
+<!-- 							<input type="text" name="m-title" id="m-title" required placeholder="Report Type"/> -->
+<!-- 						</div>						 -->
+						
+						<div class="form-field">
+							<label for="m-name" font-weight="bold" color="black">Account SID</label>
+							<input type="text" name="m-accountsid" id="m-accountsid" required placeholder="Account SID"/>
+						</div>
+						
+						<div class="form-field">
+							<label for="m-name" font-weight="bold" color="black">Auth Token</label>
+							<input type="text" name="m-authtoken" id="m-authtoken" required placeholder="Auth Token"/>
+						</div>		
+						
+						<div class="form-field">
+							<label for="m-name" font-weight="bold" color="black">Customer Account SID</label>
+							<input type="text" name="m-customeraccsid" id="m-customeraccsid" required placeholder="Customer's Account SID"/>
+						</div>																	
 						
 						<!--  <div class="form-field">
 							<label for="m-desc">Description</label>
@@ -116,47 +139,40 @@
 						</div> -->
 						
 						<div class="form-field">
-							 <label for="m-date">Date</label>
+							 <label for="m-date">Report Start Date</label>
 							<!-- <textarea name="m-contenturl" id="m-contenturl"></textarea>-->
-							<input name="m-date" type="date" id="m-date" />
+							<input name="m-startdate" type="date" id="m-startdate" />
 						</div>		
 						
 						<div class="form-field">
-							 <label for="m-time">Time</label>
+							 <label for="m-date">Report End Date</label>
 							<!-- <textarea name="m-contenturl" id="m-contenturl"></textarea>-->
-							<!--<input name="m-time" type="text" id="m-time" />-->
-							<input type="time" name="m-time" id="m-time" />
-						</div>								
+							<input name="m-enddate" type="date" id="m-enddate" />
+						</div>	
 						
-						<div class="form-field">
-							<label for="m-phonenumber">Phone Number</label>
-							<input type="text" name="m-phonenumber" id="m-phonenumber" />
-						</div>
+<!-- 						<div class="form-field"> -->
+<!-- 							 <label for="m-time">Time</label> -->
+<!-- 							<textarea name="m-contenturl" id="m-contenturl"></textarea> -->
+<!-- 							<input name="m-time" type="text" id="m-time" /> -->
+<!-- 							<input type="time" name="m-time" id="m-time" /> -->
+<!-- 						</div>								 -->
+						
+<!-- 						<div class="form-field"> -->
+<!-- 							<label for="m-phonenumber">Phone Number</label> -->
+<!-- 							<input type="text" name="m-phonenumber" id="m-phonenumber" /> -->
+<!-- 						</div> -->
 
-						<input id="submit-salereminder" type="Submit" value="Create Sale Reminder">						
+						<input id="submit-twiliocountryvoicesmsreport" type="Submit" value="Run Report">						
 					</fieldset>
 				</form>
 			</div>
 		</div>
-		<a href="saleisonreminderinfo.html">App Info</a>
 		
 		<!-- Scripts -->
 		<script type="text/javascript" src="js/jquery-1.10.0.min.js"></script>
 		<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
 		<script type="text/javascript" src="js/jquery.timepicker.js"></script>
 		<script type="text/javascript" src="css/lib/base.js"></script>
-		<!-- <script type="text/javascript" src="js/jquery.timepicker.min.js"</script>-->
-		<!--<script>
-			$(function(){
-			  $.datepicker.setDefaults(
-			    $.extend($.datepicker.regional[""])
-			  );
-			  $("#m-date").datepicker();
-			});
-  		</script> -->
-  		<!--  <script>
-  			$("#m-time").timepicker();
-  		</script> -->
-		<script type="text/javascript" src="js/createsalereminder.js"></script>
+		<script type="text/javascript" src="js/twiliocountryvoicesmsreport.js"></script>
 	</body>
 </html>
